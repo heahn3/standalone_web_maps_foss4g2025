@@ -39,23 +39,22 @@ By the end of the workshop, you will have this:
 standalone_web_maps_foss4g2025/
 ├── README.md                    # This file
 ├── Makefile                     # Build and serve commands (uses Caddy)
-├── index.html                   # Main HTML file for the web map
-├── index.js                     # JavaScript code that initializes and controls the map
-├── styles.css                   # Custom CSS for styling the map container and UI
+├── index.html                   # Main HTML file for the web map (contains inline CSS and JavaScript)
+├── style.json                   # MapLibre style specification (sources, layers, styling)
 ├── lib/                         # Third-party libraries (self-contained)
 │   ├── maplibre-gl.5.10.0.js    # MapLibre GL JS library
 │   ├── maplibre-gl.5.10.0.css   # MapLibre GL JS styles
 │   ├── pmtiles.4.3.0.js         # PMTiles library for tile serving
-│   ├── fonts/                    # Noto Sans font files (for text rendering)
+│   ├── fonts/                    # Noto Sans font files (for text rendering) - added in later steps
 │   │   ├── Noto Sans Regular/
 │   │   ├── Noto Sans Medium/
 │   │   ├── Noto Sans Italic/
 │   │   └── OFL.txt              # Open Font License
-│   └── icons/                   # Custom icons and sprites
-│       ├── sprites/             # Sprite sheets for map icons
-│       └── svg/                 # SVG icon files
+│   └── sprites/                  # Sprite sheets for map icons - added in later steps
+│       ├── sprite.png
+│       └── sprite.json
 └── sources/                     # Source data files
-    ├── waiheke_island.pmtiles   # PMTiles archive for Waiheke Island basemap
+    ├── waiheke_island.pmtiles   # PMTiles archive for Waiheke Island basemap - added in later steps
     └── te_ara_hura.geojson       # GeoJSON file for Te Ara Hura trail
 ```
 
@@ -120,11 +119,10 @@ The workshop will proceed step by step, building the map application incremental
 
 ## File Descriptions
 
-- **index.html**: The main HTML structure of the web map application
-- **index.js**: JavaScript code that initializes and controls the map
-- **styles.css**: Custom CSS for styling the map container and UI elements
-- **sources/**: Contains GeoJSON and other geographic data files for the map
-- **lib/**: All third-party libraries bundled locally (ensures offline functionality)
+- **index.html**: The main HTML file containing the map container, inline CSS for styling, and JavaScript to initialize MapLibre
+- **style.json**: MapLibre style specification defining data sources (GeoJSON, PMTiles) and layer styling
+- **sources/**: Contains GeoJSON and PMTiles geographic data files for the map
+- **lib/**: All third-party libraries (MapLibre, PMTiles), fonts, and sprites bundled locally (ensures offline functionality)
 
 ## Making It Your Own
 
